@@ -3,7 +3,6 @@ const nomeAluno = document.getElementById("nome");
 const botaoCadastrar = document.getElementById("cadastrar");
 
 botaoCadastrar.addEventListener("click", cadastrarAluno);
-nomeAluno.addEventListener("enter",cadastrarAluno)
 
 function cadastrarAluno(evento) {
   const nomeTrim = nomeAluno.value.trim();
@@ -11,7 +10,6 @@ function cadastrarAluno(evento) {
     alert("Preencha um nome válido");
   } else {
     alunos.push(nomeAluno.value);
-    console.log(nomeAluno.value.trim());
     if (alunos.length < 2) {
       exibeLista();
     } else {
@@ -46,8 +44,6 @@ function limpaLista() {
 function removeAluno(id) {
   const aluno = document.getElementById(id);
   alunos.splice(id,1);
-  console.log(`Botão do Elemento ${id} clicado`);
-  console.log(alunos);
   limpaLista();
   exibeLista();
 
