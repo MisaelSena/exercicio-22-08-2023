@@ -2,3 +2,44 @@ body{
     background-color: gray;
     color: white;
 }
+hr{
+    color: white;
+}
+ul,li{
+    font-size: 20px;
+    padding-left: 0px;
+}
+#nome{
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    border: 0px;    
+    border-radius: 15px;
+    font-size: 17px;
+}
+#cadastrar{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(43, 88, 46);
+    border: 0px;
+    border-radius: 15px;
+    color: white;
+    font-size: 18px;
+}
+#cadastrar:hover{
+    background-color: rgb(31, 63, 33);
+    transition-delay: 5ms;
+}
+.btn-excluir{
+    width: 80px;
+    height: 25px;
+    background-color: rgb(172, 47, 47);
+    border: 0px;
+    border-radius: 15px;
+    color: white;
+    font-size: 15px;
+}
+.btn-excluir:hover{
+    background-color: rgb(133, 35, 35);
+    transition-delay: 5ms;
+}

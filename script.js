@@ -3,6 +3,7 @@ const nomeAluno = document.getElementById("nome");
 const botaoCadastrar = document.getElementById("cadastrar");
 
 botaoCadastrar.addEventListener("click", cadastrarAluno);
+nomeAluno.addEventListener("enter",cadastrarAluno)
 
 function cadastrarAluno(evento) {
   const nomeTrim = nomeAluno.value.trim();
@@ -17,6 +18,7 @@ function cadastrarAluno(evento) {
       limpaLista();
       exibeLista();
     }
+    document.getElementById("nome").value = "";
   }
 }
 
@@ -24,13 +26,14 @@ function exibeLista() {
   for (let i = 0; i < alunos.length; i++) {
     let item = document.createElement("ol");
     let btnExcluir = document.createElement("button");
-    item.appendChild(document.createTextNode(`${i + 1}- ${alunos[i]} - `));
+    item.appendChild(document.createTextNode(`${i + 1}- ${alunos[i]} `));
     btnExcluir.appendChild(document.createTextNode('Excluir'));
     lista.appendChild(item);
     item.appendChild(btnExcluir);
     item.setAttribute("id", i);
     btnExcluir.setAttribute("id",i);
     btnExcluir.setAttribute("onClick",`removeAluno(${i})`);
+    btnExcluir.setAttribute("class","btn-excluir");
   }
 }
 function limpaLista() {
