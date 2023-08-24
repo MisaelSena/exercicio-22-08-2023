@@ -6,10 +6,32 @@ botaoCadastrar.addEventListener("click",cadastrarAluno);
 
 function cadastrarAluno(evento) {
     alunos.push(nomeAluno.value);
+    if(alunos.length<2){
+        exibeLista();
+    }else{
+        limpaLista();
+        exibeLista();
+    }
+       
     
-    for (let i = 0; i < alunos.length; i++) {
-        document.getElementById("lista").innerHTML = `<p>ID: ${i+1} - ${alunos[i]} <button id="${i}">Excluir</button></p>`
+    
+}
+
+function exibeLista() {
+    for (let i = 0; i < alunos.length; i++) {                              
+            let item = document.createElement('li');
+            item.appendChild(document.createTextNode(`${i+1}- ${alunos[i]}`));
+            lista.appendChild(item);
+            item.setAttribute("id",i);        
         
     }
+}
+function limpaLista() {
+           
+        let ulLista = document.getElementById("lista");
+        while (ulLista.firstChild) {
+            ulLista.removeChild(ulLista.firstChild);
+          }   
     
+      
 }
