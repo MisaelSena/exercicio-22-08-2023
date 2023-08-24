@@ -22,7 +22,7 @@ function cadastrarAluno(evento) {
 
 function exibeLista() {
   for (let i = 0; i < alunos.length; i++) {
-    let item = document.createElement("ol");
+    let item = document.createElement("li");
     let btnExcluir = document.createElement("button");
     item.appendChild(document.createTextNode(`${i + 1}- ${alunos[i]} `));
     btnExcluir.appendChild(document.createTextNode('Excluir'));
